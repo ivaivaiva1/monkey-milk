@@ -1,0 +1,19 @@
+[background arg="res://assets/bg/Witches and Wizards/Workshop 7.png" fade="0.0"]
+You finally return to your laboratory.
+After several near-death experiences...
+And far more monkey milk than anyone should legally possess...
+You are ready to begin.
+[background arg="res://assets/bg/Witches and Wizards/Grimoire 2.png" fade="0.0"]
+The grimoire rests on the table.
+[background arg="res://assets/bg/Witches and Wizards/Grimoire 3.png" fade="0.0"]
+Its pages turn on their own.
+The recipe for your first companion appears.
+[background arg="res://assets/bg/Witches and Wizards/Herbs.png" fade="0.0"]
+player: None of these sound sanitary...
+- Let's do it.
+	player: I'll do it.
+	If this works, it'll be awesome.
+- This is a terrible idea.
+	player: This is definitely a really bad idea.
+	But you did it anyway.
+[background arg="res://assets/bg/Witches and Wizards/Cauldron 1.png" fade="0.0"]

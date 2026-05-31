@@ -17,5 +17,4 @@ func throw_bananas():
 
 
 func _on_timer_timeout() -> void:
-	print("morri")
 	queue_free()

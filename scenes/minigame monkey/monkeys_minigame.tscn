@@ -5584,6 +5584,7 @@ label_settings = SubResource("LabelSettings_btoir")
 script = ExtResource("8_btoir")
 
 [node name="GameOverPanel" type="Panel" parent="UI" unique_id=164802644]
+visible = false
 self_modulate = Color(0, 0, 0, 1)
 anchors_preset = -1
 anchor_left = 0.30600002

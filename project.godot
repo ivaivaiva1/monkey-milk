@@ -24,11 +24,12 @@ Globals="*uid://ch5o8pewnkrd5"
 [dialogic]
 
 directories/dch_directory={
-"Grimoire": "res://dialogues/char/Grimoire.dch",
+"Necronomicon": "res://dialogues/char/Necronomicon.dch",
 "player": "res://dialogues/char/player.dch"
 }
 directories/dtl_directory={
-"Intro": "res://dialogues/Intro.dtl"
+"Intro": "res://dialogues/Intro.dtl",
+"got_milk": "res://got_milk.dtl"
 }
 layout/style_directory={
 "": "res://styles/vn_style.tres",
