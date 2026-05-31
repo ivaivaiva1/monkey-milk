@@ -7,6 +7,12 @@ var is_collected: bool = false
 
 func _ready() -> void:
 	sprite.material = sprite.material.duplicate()
+	
+	
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", Vector2.ONE, 0.8)
 
 
 func _on_area_entered(area: Area2D) -> void:

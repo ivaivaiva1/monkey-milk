@@ -33,6 +33,7 @@ animations = [{
 
 [node name="Monkey" type="Area2D" unique_id=1839237651]
 position = Vector2(1, -32)
+scale = Vector2(1e-05, 1e-05)
 script = ExtResource("1_gfg0q")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=780403184]

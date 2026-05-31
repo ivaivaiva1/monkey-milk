@@ -4,10 +4,17 @@
 [ext_resource type="Script" uid="uid://ljgqd770x4oc" path="res://dialogues/dialogue_system.gd" id="1_ryr2b"]
 
 [node name="DialogueScene" type="Node2D" unique_id=1253116087]
+process_mode = 3
 script = ExtResource("1_ryr2b")
+
+[node name="intro" type="Node2D" parent="." unique_id=521908246]
+unique_name_in_owner = true
+script = ExtResource("1_q1w68")
+dialogue_name = "Intro"
+next_scene = "res://scenes/minigame monkey/monkeys_minigame.tscn"
 
 [node name="got_milk" type="Node2D" parent="." unique_id=171293340]
 unique_name_in_owner = true
 script = ExtResource("1_q1w68")
 dialogue_name = "got_milk"
-next_scene = "res://scenes/minigame cauldron/cauldron_minigame.tscn"
+next_scene = "res://scenes/minigame crafting/crafting_minigame.tscn"

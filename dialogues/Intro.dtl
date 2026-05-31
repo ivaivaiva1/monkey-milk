@@ -1,4 +1,4 @@
-[background arg="res://assets/bg/Witches and Wizards/Library 2.png" fade="0.1" transition="Simple Fade"]
+[background arg="res://assets/bg/pixelado/Library 2.png" fade="0.1" transition="Simple Fade"]
 Most necromancers spend years mastering their craft.
 And they always say "Do not experiment with forbidden magic."
 Naturally, I took that as a suggestion.
@@ -18,13 +18,13 @@ What pronouns do you identify as?
 	set {player_gender} = "nonbinary"
 	Very well, {player_name}.
 	A young witch begins their journey.
-[background arg="res://assets/bg/Witches and Wizards/Shelves 4.png" fade="0.0"]
+[background arg="res://assets/bg/pixelado/Shelves 4.png" fade="0.0"]
 You find yourself wandering through the forbidden section of the academy library.
 They say most books there are cursed.
 Some are dangerous.
 One appears to be both.
 You pull it from the shelf.
-[background arg="res://assets/bg/Witches and Wizards/Grimoire 1.png" fade="0.5" wait="true"]
+[background arg="res://assets/bg/pixelado/Grimoire 1.png" fade="0.5" wait="true"]
 The cover reads\:
 "NECRONOMICON OF LOVE\: Create Your Ideal Wife"
 That sounds incredibly unsafe.

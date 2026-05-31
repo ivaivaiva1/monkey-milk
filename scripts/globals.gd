@@ -9,7 +9,7 @@ var last_dialogue: LastDialogue = LastDialogue.NULL
 enum LastDialogue {
 	NULL,
 	INTRO,
-	EPICO,
-	GRIMORIO,
-	LEGENDARY
+	GOT_MILK,
+	CAULDRON,
+	FINAL
 }

@@ -58,10 +58,6 @@ func _on_try_again_button_button_down() -> void:
 	get_tree().reload_current_scene()
 
 func _on_done_button_button_down() -> void:
-	get_tree().change_scene_to_scene()
-
-
-func _on_timeline_ended():
 	get_tree().change_scene_to_file("res://dialogues/dialogue_scene.tscn")
 
 
