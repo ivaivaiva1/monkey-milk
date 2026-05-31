@@ -5,12 +5,12 @@ var monkey_minigame: MonkeyMinigame
 
 var monkey_scene: PackedScene = preload("res://scenes/minigame monkey/monkey.tscn")
 var monkeys: Array[Monkey] = []
-var monkey_cooldown: float = 3
-@onready var monkey_timer: float = randf_range(monkey_cooldown * 0.5, monkey_cooldown * 1.5)
+var monkey_cooldown: float = 2
+var monkey_timer: float
 
 
-func _ready() -> void:
-	randomize()
+func start() -> void:
+	monkey_timer = monkey_cooldown
 
 
 func _process(delta: float) -> void:
@@ -18,19 +18,19 @@ func _process(delta: float) -> void:
 		monkey_timer -= delta
 	else:
 		if monkeys.size() == 5:
-			monkey_timer = randf_range(monkey_cooldown * 0.5, monkey_cooldown * 1.5)
+			monkey_timer = monkey_minigame.currently_monkey_cooldown
 			return
-		monkey_timer = randf_range(monkey_cooldown * 0.5, monkey_cooldown * 1.5)
 		spawn_monkey()
 
 
 
 func spawn_monkey():
+	monkey_timer = monkey_minigame.currently_monkey_cooldown
 	var monkey_instance = monkey_scene.instantiate()
 	monkeys.append(monkey_instance)
+	self.add_child(monkey_instance)
 	var target_x: float = randf_range(49, 498)
 	var target_y: float = randf_range(41, 462)
-	self.add_child(monkey_instance)
 	monkey_instance.global_position = Vector2(target_x, target_y)
 	monkey_instance.monkey_spawner = self
 

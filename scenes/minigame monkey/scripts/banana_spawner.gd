@@ -1,29 +1,34 @@
 extends Node2D
 class_name BananaSpawner
 
+var monkey_minigame: MonkeyMinigame
 
-var spawn_cooldown: float = 1
-@onready var timer: float = randf_range(spawn_cooldown * 0.5, spawn_cooldown * 1.5)
+var banana_cooldown: float = 2.5
+var banana_timer: float = 2.5
 var blue_bomb: PackedScene = preload("res://scenes/minigame monkey/banana_bomb_blue.tscn")
 var yellow_bomb: PackedScene = preload("res://scenes/minigame monkey/banana_bomb.tscn")
 
 
-func _ready() -> void:
-	randomize()
+
+func start() -> void:
+	banana_timer = monkey_minigame.currently_bananas_cooldown
 
 
 func _process(delta: float) -> void:
-	if timer > 0: 
-		timer -= delta
+	print(banana_timer)
+	if banana_timer > 0: 
+		banana_timer -= delta
 	else:
-		timer = randf_range(spawn_cooldown * 0.5, spawn_cooldown * 1.5)
 		spawn_bomb()
 
 
 
 func spawn_bomb():
+	banana_timer = monkey_minigame.currently_bananas_cooldown
+	#print(monkey_minigame.currently_bananas_cooldown)
+	
 	var target_bomb: PackedScene
-	if randf_range(0, 100) > 20:
+	if randf_range(0, 100) > monkey_minigame.currently_blue_chance:
 		target_bomb = yellow_bomb
 	else:
 		target_bomb = blue_bomb

@@ -47,9 +47,8 @@ autoplay = "default"
 frame_progress = 0.63119996
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2087874841]
-visible = false
 position = Vector2(-0.71943665, -10.251953)
-scale = Vector2(1.7, 1.7)
+scale = Vector2(2, 2)
 polygon = PackedVector2Array(-3.2927413, -23.652344, 20.553415, -24.421574, 25.168798, -19.80619, 25.168798, -12.11388, 13.630337, 5.5784264, 16.70726, 33.270737, -14.061974, 29.424583, -20.21582, 12.501505, -17.138897, 4.8091965)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c810652fi11xw" path="res://assets/Sprite Pack 6/1 - Penguin/Idle (16 x 16).png" id="4_6nm46"]
 [ext_resource type="Texture2D" uid="uid://c3wq7h8w7ddol" path="res://assets/Sprite Pack 3/4 - Tommy/Walking (32 x 32).png" id="4_qsoyl"]
 [ext_resource type="Texture2D" uid="uid://dvbjx4muvimh2" path="res://assets/Sprite Pack 6/1 - Penguin/Waddling (16 x 16).png" id="7_i623q"]
+[ext_resource type="Texture2D" uid="uid://dpjdnw87wp7cw" path="res://scenes/minigame monkey/pixel heart.png" id="8_i623q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rfe5m"]
 radius = 5.0
@@ -223,12 +224,14 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1766147043]
+[node name="Player" type="CharacterBody2D" unique_id=1766147043 node_paths=PackedStringArray("hearts")]
 position = Vector2(0, -30)
 scale = Vector2(2, 2)
 script = ExtResource("1_e4p34")
+hearts = [NodePath("PixelHeart1"), NodePath("PixelHeart2"), NodePath("PixelHeart3")]
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1110096115 groups=["Player"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=685514990 groups=["Player"]]
 z_index = 4096
@@ -239,9 +242,23 @@ shape = SubResource("CapsuleShape2D_rfe5m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=692799283]
 z_index = 100
 sprite_frames = SubResource("SpriteFrames_rfe5m")
-animation = &"idle_nonbinary"
+animation = &"idle_girl"
 autoplay = "idle_girl"
-frame_progress = 0.7360883
+
+[node name="PixelHeart1" type="Sprite2D" parent="." unique_id=1084952609]
+position = Vector2(-9.021999, 20.5)
+scale = Vector2(0.013, 0.013)
+texture = ExtResource("8_i623q")
+
+[node name="PixelHeart2" type="Sprite2D" parent="." unique_id=2077896285]
+position = Vector2(-0.043998726, 20.478)
+scale = Vector2(0.013, 0.013)
+texture = ExtResource("8_i623q")
+
+[node name="PixelHeart3" type="Sprite2D" parent="." unique_id=1066328563]
+position = Vector2(8.978001, 20.5)
+scale = Vector2(0.013, 0.013)
+texture = ExtResource("8_i623q")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

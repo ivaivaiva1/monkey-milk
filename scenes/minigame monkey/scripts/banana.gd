@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Banana
 
 var direction: Vector2
+var id: int
 
 const SPEED = 300.0
 const ROTATION_SPEED = 12 # radianos por segundo

@@ -8,6 +8,11 @@ const ACCELERATION = 3.7
 const FRICTION = 60
 var direction: Vector2
 
+@export var hearts: Array[Sprite2D] = []
+var max_life: int = 3
+var current_life: int = 3 
+var hited_bananas: Array[int] = []
+
 func _process(delta: float) -> void:
 	player_warp()
 
@@ -85,4 +90,24 @@ func player_warp():
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Bananas"):
+		var banana: Banana = area.get_parent() as Banana
+		
+		if banana.id in hited_bananas:
+			return
+		
+		hited_bananas.append(banana.id)
+		get_hited()
+
+
+
+func get_hited():
+	current_life -= 1
+	if current_life <= 0:
 		monkey_minigame.game_over()
+		pass
+	update_hearts()
+
+
+func update_hearts():
+	for i in range(hearts.size()):
+		hearts[i].visible = i < current_life
