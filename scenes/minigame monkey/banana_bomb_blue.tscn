@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://c82a1ap0okbrm"]
+
+[ext_resource type="Script" uid="uid://joesnemh71y" path="res://scenes/minigame monkey/scripts/banana_bomb.gd" id="1_a15xm"]
+[ext_resource type="PackedScene" uid="uid://wgyk2n766ae" path="res://scenes/minigame monkey/banana_explosion_blue.tscn" id="2_mad24"]
+[ext_resource type="Texture2D" uid="uid://cdd5dso74uskn" path="res://assets/banana.png" id="2_pwgbm"]
+[ext_resource type="Texture2D" uid="uid://bgg5cni85cu3b" path="res://assets/shadow banana.png" id="3_mad24"]
+[ext_resource type="Shader" uid="uid://dj0tbnaqo3wlb" path="res://shaders/blink_shader.gdshader" id="3_rpl8f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3i0l1"]
+shader = ExtResource("3_rpl8f")
+shader_parameter/flash_color = Color(0.17000002, 0.34983337, 1, 1)
+shader_parameter/flash_pct = 0.750000035625
+
+[node name="BananaBomb" type="Node2D" unique_id=1721452652 groups=["Bananas"]]
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_a15xm")
+explosion = ExtResource("2_mad24")
+shake_force = 5.0
+
+[node name="Bananas" type="CharacterBody2D" parent="." unique_id=1036676176]
+unique_name_in_owner = true
+position = Vector2(-3.855, -765.638)
+scale = Vector2(6, 6)
+
+[node name="Banana2" type="Sprite2D" parent="Bananas" unique_id=1990978519]
+modulate = Color(0, 0.3647059, 0.9098039, 1)
+z_index = 1000
+material = SubResource("ShaderMaterial_3i0l1")
+position = Vector2(-1.6217651, -3.5587158)
+rotation = 0.23861402
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_pwgbm")
+
+[node name="Banana" type="Sprite2D" parent="Bananas" unique_id=2108860053]
+modulate = Color(0, 0.3647059, 0.9098039, 1)
+z_index = 1000
+material = SubResource("ShaderMaterial_3i0l1")
+rotation = -0.017158903
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_pwgbm")
+
+[node name="Banana3" type="Sprite2D" parent="Bananas" unique_id=1248744214]
+modulate = Color(0, 0.3647059, 0.9098039, 1)
+z_index = 1000
+material = SubResource("ShaderMaterial_3i0l1")
+position = Vector2(2, 2)
+rotation = -0.21299754
+scale = Vector2(0.07500001, 0.07500001)
+texture = ExtResource("2_pwgbm")
+
+[node name="Banana4" type="Sprite2D" parent="Bananas" unique_id=716202968]
+modulate = Color(0, 0.3647059, 0.9098039, 1)
+z_index = 1000
+material = SubResource("ShaderMaterial_3i0l1")
+position = Vector2(5.043152, 4.335083)
+rotation = -0.46775562
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_pwgbm")
+
+[node name="Banana5" type="Sprite2D" parent="Bananas" unique_id=164965461]
+modulate = Color(0, 0.3647059, 0.9098039, 1)
+z_index = 1000
+material = SubResource("ShaderMaterial_3i0l1")
+position = Vector2(7.6908073, 5.532837)
+rotation = -0.6224651
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_pwgbm")
+
+[node name="BananaShadow" type="Node2D" parent="." unique_id=694776807]
+unique_name_in_owner = true
+scale = Vector2(0.375, 0.375)
+
+[node name="Sprite2D" type="Sprite2D" parent="BananaShadow" unique_id=674948382]
+modulate = Color(0, 0, 0, 0.4117647)
+z_index = -100
+position = Vector2(0, -0.021996498)
+texture = ExtResource("3_mad24")

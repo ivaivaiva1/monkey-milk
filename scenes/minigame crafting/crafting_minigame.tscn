@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bmmr6fkw5tyh"]
+
+[ext_resource type="Script" uid="uid://b7ykifk0sncja" path="res://scenes/minigame crafting/scripts/crafting_minigame.gd" id="1_tnoep"]
+[ext_resource type="FontFile" uid="uid://bunsdpu2mcaub" path="res://fonts/latin script/monogram/monogram.ttf" id="2_ig3qi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3q4jd"]
+line_spacing = 2.0
+font = ExtResource("2_ig3qi")
+font_size = 22
+
+[node name="CraftingMinigame" type="Node2D" unique_id=622963982]
+script = ExtResource("1_tnoep")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2078223658]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bar" type="ColorRect" parent="." unique_id=454818029]
+offset_left = 70.0
+offset_top = 220.0
+offset_right = 470.0
+offset_bottom = 240.0
+color = Color(0.16924527, 0.1692453, 0.16924527, 0.89411765)
+
+[node name="SuccessZone" type="ColorRect" parent="." unique_id=1381469048]
+offset_left = 250.0
+offset_top = 220.0
+offset_right = 310.0
+offset_bottom = 240.0
+color = Color(0.6675, 1, 0.43, 1)
+
+[node name="Marker" type="ColorRect" parent="." unique_id=1902859589]
+offset_left = 70.0
+offset_top = 200.0
+offset_right = 80.0
+offset_bottom = 260.0
+color = Color(0.99, 0.10890002, 0.3438598, 1)
+
+[node name="InstructuonLabel" type="Label" parent="." unique_id=413783955]
+offset_left = 45.0
+offset_top = 50.0
+offset_right = 501.0
+offset_bottom = 68.0
+text = " Press SPACE when the marker is inside the green zone! "
+label_settings = SubResource("LabelSettings_3q4jd")
+
+[node name="ProgressLabel" type="Label" parent="." unique_id=646872916]
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 91.0
+offset_bottom = 33.0
+
+[node name="ResultLabel" type="Label" parent="." unique_id=1324919450]
+offset_left = 235.0
+offset_top = 305.0
+offset_right = 336.0
+offset_bottom = 328.0

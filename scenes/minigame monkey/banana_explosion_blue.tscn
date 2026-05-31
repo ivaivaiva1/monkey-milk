@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://wgyk2n766ae"]
+
+[ext_resource type="Script" uid="uid://b8mtfbxkohknu" path="res://scenes/minigame monkey/scripts/banana_explosion.gd" id="1_fsva8"]
+[ext_resource type="Script" uid="uid://bgx7f2a35611l" path="res://scenes/minigame monkey/scripts/banana.gd" id="2_1avb3"]
+[ext_resource type="Shader" uid="uid://dj0tbnaqo3wlb" path="res://shaders/blink_shader.gdshader" id="3_1avb3"]
+[ext_resource type="Texture2D" uid="uid://cdd5dso74uskn" path="res://assets/banana.png" id="3_dj4h4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dj4h4"]
+shader = ExtResource("3_1avb3")
+shader_parameter/flash_color = Color(0.16862746, 0.34901962, 1, 1)
+shader_parameter/flash_pct = 0.750000035625
+
+[node name="BananaExplosion" type="Node2D" unique_id=2001033903]
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_fsva8")
+
+[node name="Banana" type="CharacterBody2D" parent="." unique_id=111285762]
+position = Vector2(-1, -1)
+script = ExtResource("2_1avb3")
+
+[node name="Sprite" type="Sprite2D" parent="Banana" unique_id=1881846095]
+material = SubResource("ShaderMaterial_dj4h4")
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("3_dj4h4")
+
+[node name="Area2D" type="Area2D" parent="Banana" unique_id=1744236764 groups=["Bananas"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Banana/Area2D" unique_id=552504356]
+visible = false
+polygon = PackedVector2Array(9.996422, -7.16648, 9.057003, 1.0925827, 3.968481, 6.259392, -4.87772, 6.2985344, -10.788236, 1.7580051, -11.218802, -1.7648182, -4.564581, -0.0034065247, 3.1464882, -0.3556881)
+
+[node name="Banana3" type="CharacterBody2D" parent="." unique_id=2046317801]
+position = Vector2(-1, 1)
+script = ExtResource("2_1avb3")
+
+[node name="Sprite" type="Sprite2D" parent="Banana3" unique_id=1398737430]
+material = SubResource("ShaderMaterial_dj4h4")
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("3_dj4h4")
+
+[node name="Area2D" type="Area2D" parent="Banana3" unique_id=645705230 groups=["Bananas"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Banana3/Area2D" unique_id=387543430]
+visible = false
+polygon = PackedVector2Array(9.996422, -7.16648, 9.057003, 1.0925827, 3.968481, 6.259392, -4.87772, 6.2985344, -10.788236, 1.7580051, -11.218802, -1.7648182, -4.564581, -0.0034065247, 3.1464882, -0.3556881)
+
+[node name="Banana4" type="CharacterBody2D" parent="." unique_id=1493749625]
+position = Vector2(1, 1)
+script = ExtResource("2_1avb3")
+
+[node name="Sprite" type="Sprite2D" parent="Banana4" unique_id=1106800943]
+material = SubResource("ShaderMaterial_dj4h4")
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("3_dj4h4")
+
+[node name="Area2D" type="Area2D" parent="Banana4" unique_id=175130501 groups=["Bananas"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Banana4/Area2D" unique_id=1769505556]
+visible = false
+polygon = PackedVector2Array(9.996422, -7.16648, 9.057003, 1.0925827, 3.968481, 6.259392, -4.87772, 6.2985344, -10.788236, 1.7580051, -11.218802, -1.7648182, -4.564581, -0.0034065247, 3.1464882, -0.3556881)
+
+[node name="Banana2" type="CharacterBody2D" parent="." unique_id=117656738]
+position = Vector2(1, -1)
+script = ExtResource("2_1avb3")
+
+[node name="Sprite" type="Sprite2D" parent="Banana2" unique_id=732368374]
+material = SubResource("ShaderMaterial_dj4h4")
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("3_dj4h4")
+
+[node name="Area2D" type="Area2D" parent="Banana2" unique_id=1148777231 groups=["Bananas"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Banana2/Area2D" unique_id=1972502667]
+visible = false
+polygon = PackedVector2Array(9.996422, -7.16648, 9.057003, 1.0925827, 3.968481, 6.259392, -4.87772, 6.2985344, -10.788236, 1.7580051, -11.218802, -1.7648182, -4.564581, -0.0034065247, 3.1464882, -0.3556881)
+
+[node name="Timer" type="Timer" parent="." unique_id=1617220374]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

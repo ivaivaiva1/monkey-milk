@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://xvp7qwmefopf"]
+
+[ext_resource type="Texture2D" uid="uid://cdd5dso74uskn" path="res://assets/banana.png" id="1_5spy8"]
+[ext_resource type="Script" uid="uid://bgx7f2a35611l" path="res://scenes/minigame monkey/scripts/banana.gd" id="1_d0moc"]
+[ext_resource type="Script" uid="uid://b8mtfbxkohknu" path="res://scenes/minigame monkey/scripts/banana_explosion.gd" id="1_xnew4"]
+
+[node name="BananaExplosionVertical" type="Node2D" unique_id=2001033903]
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_xnew4")
+
+[node name="Banana" type="CharacterBody2D" parent="." unique_id=111285762]
+position = Vector2(0, -1)
+script = ExtResource("1_d0moc")
+
+[node name="Sprite" type="Sprite2D" parent="Banana" unique_id=1881846095]
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_5spy8")
+
+[node name="Sprite2" type="Sprite2D" parent="Banana" unique_id=647446593]
+visible = false
+modulate = Color(0.02, 0.02, 0.02, 0.16078432)
+z_index = -10
+position = Vector2(4.365386, 5.134617)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_5spy8")
+
+[node name="Area2D" type="Area2D" parent="Banana" unique_id=1744236764 groups=["Bananas"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Banana/Area2D" unique_id=552504356]
+polygon = PackedVector2Array(9.996422, -7.16648, 9.057003, 1.0925827, 3.968481, 6.259392, -4.87772, 6.2985344, -10.788236, 1.7580051, -11.218802, -1.7648182, -4.564581, -0.0034065247, 3.1464882, -0.3556881)
+
+[node name="Banana3" type="CharacterBody2D" parent="." unique_id=1803719392]
+position = Vector2(1, 0)
+script = ExtResource("1_d0moc")
+
+[node name="Sprite" type="Sprite2D" parent="Banana3" unique_id=551988961]
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_5spy8")
+
+[node name="Area2D" type="Area2D" parent="Banana3" unique_id=976605345 groups=["Bananas"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Banana3/Area2D" unique_id=1470615715]
+polygon = PackedVector2Array(9.996422, -7.16648, 9.057003, 1.0925827, 3.968481, 6.259392, -4.87772, 6.2985344, -10.788236, 1.7580051, -11.218802, -1.7648182, -4.564581, -0.0034065247, 3.1464882, -0.3556881)
+
+[node name="Sprite2" type="Sprite2D" parent="Banana3" unique_id=270288784]
+visible = false
+modulate = Color(0.02, 0.02, 0.02, 0.16078432)
+z_index = -10
+position = Vector2(4.365386, 5.134617)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_5spy8")
+
+[node name="Banana4" type="CharacterBody2D" parent="." unique_id=406293384]
+position = Vector2(-1, 0)
+script = ExtResource("1_d0moc")
+
+[node name="Sprite" type="Sprite2D" parent="Banana4" unique_id=1099348266]
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_5spy8")
+
+[node name="Area2D" type="Area2D" parent="Banana4" unique_id=926410435 groups=["Bananas"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Banana4/Area2D" unique_id=295704278]
+polygon = PackedVector2Array(9.996422, -7.16648, 9.057003, 1.0925827, 3.968481, 6.259392, -4.87772, 6.2985344, -10.788236, 1.7580051, -11.218802, -1.7648182, -4.564581, -0.0034065247, 3.1464882, -0.3556881)
+
+[node name="Sprite2" type="Sprite2D" parent="Banana4" unique_id=41425849]
+visible = false
+modulate = Color(0.02, 0.02, 0.02, 0.16078432)
+z_index = -10
+position = Vector2(4.365386, 5.134617)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_5spy8")
+
+[node name="Banana2" type="CharacterBody2D" parent="." unique_id=254257652]
+position = Vector2(0, 1)
+script = ExtResource("1_d0moc")
+
+[node name="Sprite" type="Sprite2D" parent="Banana2" unique_id=1661997333]
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_5spy8")
+
+[node name="Area2D" type="Area2D" parent="Banana2" unique_id=2003464244 groups=["Bananas"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Banana2/Area2D" unique_id=1120839414]
+polygon = PackedVector2Array(9.996422, -7.16648, 9.057003, 1.0925827, 3.968481, 6.259392, -4.87772, 6.2985344, -10.788236, 1.7580051, -11.218802, -1.7648182, -4.564581, -0.0034065247, 3.1464882, -0.3556881)
+
+[node name="Sprite2" type="Sprite2D" parent="Banana2" unique_id=1797918661]
+visible = false
+modulate = Color(0.02, 0.02, 0.02, 0.16078432)
+z_index = -10
+position = Vector2(4.365386, 5.134617)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("1_5spy8")
+
+[node name="Timer" type="Timer" parent="." unique_id=2121879800]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

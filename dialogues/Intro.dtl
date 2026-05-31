@@ -1,0 +1,44 @@
+[background arg="res://assets/bg/sci lab.png" fade="0.1" transition="Simple Fade"]
+Most necromancers spend years mastering their craft.
+And they always say "Do not experiment with forbidden magic."
+Naturally, I took that as a suggestion.
+I found a suspicious book and skipped that part.
+<Empty Text Event>
+[text_input text="What is your name?" var="player_name"]
+What pronouns do you identify as?
+- She/her
+	set {player_gender} = "female"
+	Very well, {player_name}.
+	A young witch begins her journey.
+- He/his
+	set {player_gender} = "male"
+	Very well, {player_name}.
+	A young wizard begins his journey.
+- They/them
+	set {player_gender} = "nonbinary"
+	Very well, {player_name}.
+	A young sorcerer begins their journey.
+You find yourself wandering through the forbidden section of the academy library.
+They say most books there are cursed.
+Some are dangerous.
+One appears to be both.
+You pull it from the shelf.
+[background arg="res://assets/bg/book.png" fade="0.5" wait="true"]
+The cover reads\:
+"FORBIDDEN GRIMOIRE OF COMPANION CREATION"
+That sounds incredibly unsafe.
+You open it anyway.
+The first page contains only three steps.
+Grimoire: Step 1\:\
+Acquire Monkey Milk.
+...
+player: Monkey milk?
+Yes.
+Monkey milk.
+player: Of all possible ingredients...
+Grimoire: Step 2\:\
+Gather additional ingredients.
+Grimoire: Step 3\:\
+Perform resurrection ritual.
+player: This is definitely going to end badly.
+And so, the first ingredient hunt began...

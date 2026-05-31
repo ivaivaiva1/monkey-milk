@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://buxooq1u2t0ub"]
+
+[ext_resource type="Shader" uid="uid://dj0tbnaqo3wlb" path="res://shaders/blink_shader.gdshader" id="1_75xqe"]
+[ext_resource type="Script" uid="uid://df71pxjheamks" path="res://scenes/minigame monkey/scripts/monkey.gd" id="1_gfg0q"]
+[ext_resource type="Texture2D" uid="uid://kw7y81uog80e" path="res://monkeyman/latin monkey.png" id="3_xu0k0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_75xqe"]
+shader = ExtResource("1_75xqe")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_pct = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvvnp"]
+atlas = ExtResource("3_xu0k0")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfg0q"]
+atlas = ExtResource("3_xu0k0")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nj12p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvvnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfg0q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Monkey" type="Area2D" unique_id=1839237651]
+position = Vector2(1, -32)
+script = ExtResource("1_gfg0q")
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=780403184]
+unique_name_in_owner = true
+z_index = -100
+material = SubResource("ShaderMaterial_75xqe")
+position = Vector2(0, -9.664379)
+scale = Vector2(1.8, 1.8)
+sprite_frames = SubResource("SpriteFrames_nj12p")
+autoplay = "default"
+frame_progress = 0.63119996
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2087874841]
+visible = false
+position = Vector2(-0.71943665, -10.251953)
+scale = Vector2(1.7, 1.7)
+polygon = PackedVector2Array(-3.2927413, -23.652344, 20.553415, -24.421574, 25.168798, -19.80619, 25.168798, -12.11388, 13.630337, 5.5784264, 16.70726, 33.270737, -14.061974, 29.424583, -20.21582, 12.501505, -17.138897, 4.8091965)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
