@@ -9,7 +9,6 @@ const FRICTION = 60
 var direction: Vector2
 
 func _process(delta: float) -> void:
-	print(Globals.player_gender)
 	player_warp()
 
 
@@ -49,11 +48,15 @@ func change_anim():
 	if direction.length() > 0.1:
 		if Globals.player_gender == "female":
 			anim.play("walk_girl")
+		elif Globals.player_gender == "nonbinary":
+			anim.play("walk_nonbinary")
 		else:
 			anim.play("walk_boy")
 	else:
 		if Globals.player_gender == "female":
 			anim.play("idle_girl")
+		elif Globals.player_gender == "nonbinary":
+			anim.play("idle_nonbinary")
 		else:
 			anim.play("idle_boy")
 

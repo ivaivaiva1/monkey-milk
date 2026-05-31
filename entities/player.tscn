@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://b2hypfpiekthc" path="res://assets/Sprite Pack 3/4 - Tommy/Idle_Poses (32 x 32).png" id="2_qly61"]
 [ext_resource type="Texture2D" uid="uid://cc7fcat6t8fhl" path="res://assets/chars/playergirl1_idle.png" id="2_rfe5m"]
 [ext_resource type="Texture2D" uid="uid://dlfkijmq7y6nn" path="res://assets/chars/playergirl1_walk.png" id="3_qly61"]
+[ext_resource type="Texture2D" uid="uid://c810652fi11xw" path="res://assets/Sprite Pack 6/1 - Penguin/Idle (16 x 16).png" id="4_6nm46"]
 [ext_resource type="Texture2D" uid="uid://c3wq7h8w7ddol" path="res://assets/Sprite Pack 3/4 - Tommy/Walking (32 x 32).png" id="4_qsoyl"]
+[ext_resource type="Texture2D" uid="uid://dvbjx4muvimh2" path="res://assets/Sprite Pack 6/1 - Penguin/Waddling (16 x 16).png" id="7_i623q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rfe5m"]
 radius = 5.0
@@ -25,6 +27,26 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dchgp"]
 atlas = ExtResource("2_qly61")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n8aq"]
+atlas = ExtResource("4_6nm46")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28s6d"]
+atlas = ExtResource("4_6nm46")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cicqb"]
+atlas = ExtResource("4_6nm46")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj0ki"]
+atlas = ExtResource("4_6nm46")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fruft"]
+atlas = ExtResource("4_6nm46")
+region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdgjc"]
 atlas = ExtResource("4_qsoyl")
@@ -66,6 +88,30 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("3_qly61")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_slxql"]
+atlas = ExtResource("7_i623q")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evlff"]
+atlas = ExtResource("7_i623q")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7db53"]
+atlas = ExtResource("7_i623q")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plaij"]
+atlas = ExtResource("7_i623q")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib8tg"]
+atlas = ExtResource("7_i623q")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcwxb"]
+atlas = ExtResource("7_i623q")
+region = Rect2(80, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_rfe5m"]
 animations = [{
 "frames": [{
@@ -92,6 +138,26 @@ animations = [{
 "loop": true,
 "name": &"idle_girl",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n8aq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28s6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cicqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj0ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fruft")
+}],
+"loop": true,
+"name": &"idle_nonbinary",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -132,6 +198,29 @@ animations = [{
 "loop": true,
 "name": &"walk_girl",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slxql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evlff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7db53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plaij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib8tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcwxb")
+}],
+"loop": true,
+"name": &"walk_nonbinary",
+"speed": 6.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1766147043]
@@ -150,8 +239,9 @@ shape = SubResource("CapsuleShape2D_rfe5m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=692799283]
 z_index = 100
 sprite_frames = SubResource("SpriteFrames_rfe5m")
-animation = &"walk_boy"
+animation = &"idle_nonbinary"
 autoplay = "idle_girl"
+frame_progress = 0.7360883
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

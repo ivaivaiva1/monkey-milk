@@ -6,18 +6,24 @@ I found a suspicious book and skipped that part.
 <Empty Text Event>
 [text_input text="What is your name?" var="player_name"]
 What pronouns do you identify as?
+- He/his
+	set {player_gender} = "male"
+	Very well, {player_name}.
+	A young witch begins his journey.
 - She/her
 	set {player_gender} = "female"
 	Very well, {player_name}.
 	A young witch begins her journey.
-- He/his
-	set {player_gender} = "male"
-	Very well, {player_name}.
-	A young wizard begins his journey.
+	- He/his
+		set {player_gender} = "male"
+		Very well, {player_name}.
+		A young sorcerer begins their journey.
+		Very well, {player_name}.
+		A young wizard begins his journey.
 - They/them
 	set {player_gender} = "nonbinary"
 	Very well, {player_name}.
-	A young sorcerer begins their journey.
+	A young witch begins their journey.
 You find yourself wandering through the forbidden section of the academy library.
 They say most books there are cursed.
 Some are dangerous.

@@ -24,9 +24,11 @@ func _ready() -> void:
 	player.change_anim()
 	get_tree().paused = true
 
+
 func start_game():
 	if Dialogic.VAR.get_variable("player_gender") != "":
 		Globals.player_gender = Dialogic.VAR.get_variable("player_gender")
+	player.global_position = Vector2(270, 250)
 	blur_screen(false)
 	milk_counter.visible = true
 
@@ -54,6 +56,9 @@ func game_over():
 
 func _on_try_again_button_button_down() -> void:
 	get_tree().reload_current_scene()
+
+func _on_done_button_button_down() -> void:
+	pass 
 
 
 func blur_screen(condition: bool):

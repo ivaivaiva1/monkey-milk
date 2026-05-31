@@ -6,6 +6,7 @@ extends Node2D
 @onready var bar: ColorRect = $Bar
 @onready var progress_label: Label = $ProgressLabel
 
+var timeline = Dialogic.start("")
 
 var speed = 300
 var direction = 1
