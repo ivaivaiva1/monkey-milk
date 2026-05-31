@@ -2,8 +2,8 @@ extends Node2D
 
 var caulderon_scene
 
-@onready var marker: ColorRect = $Marker
-@onready var success_zone: ColorRect = $SuccessZone
+@onready var marker: ColorRect = %Marker
+@onready var success_zone: ColorRect = %SuccessZone
 @onready var result_label: Label = $ResultLabel
 @onready var bar: ColorRect = $Bar
 @onready var progress_label: Label = $ProgressLabel

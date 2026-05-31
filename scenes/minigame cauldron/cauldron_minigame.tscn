@@ -2,46 +2,67 @@
 
 [ext_resource type="Script" uid="uid://bdv2uaan7gt31" path="res://scenes/minigame cauldron/scripts/cauldron_minigame.gd" id="1_8nb3i"]
 [ext_resource type="Script" uid="uid://c02xecpiebahy" path="res://scenes/minigame cauldron/scripts/ingredient.gd" id="1_o7ff5"]
+[ext_resource type="Texture2D" uid="uid://bjjb1n0fy6w2l" path="res://assets/ingredientes/caulderon.png" id="2_f3vod"]
 [ext_resource type="PackedScene" uid="uid://c473vdoyjj26f" path="res://scenes/minigame cauldron/ingredients.tscn" id="3_a8o8l"]
-[ext_resource type="Texture2D" uid="uid://dcyvm1ek2nspd" path="res://assets/bucket_of_milk.png" id="3_ubya0"]
-[ext_resource type="Texture2D" uid="uid://cdd5dso74uskn" path="res://assets/banana.png" id="4_s3l6n"]
-[ext_resource type="Texture2D" uid="uid://c6pjuesus15dq" path="res://assets/milk box.png" id="5_biae1"]
-[ext_resource type="Texture2D" uid="uid://bymxmar1pexkx" path="res://assets/light_green_box_2.png" id="6_s3l6n"]
+[ext_resource type="Texture2D" uid="uid://bpvnh716rypk8" path="res://assets/ingredientes/box_ingredients.png" id="3_c5a2w"]
+[ext_resource type="Shader" uid="uid://0saxp6h7c5fs" path="res://shaders/blur_shader.gdshader" id="3_i0ytv"]
+[ext_resource type="PackedScene" uid="uid://bmmr6fkw5tyh" path="res://scenes/minigame crafting/crafting_minigame.tscn" id="3_sm5v0"]
+[ext_resource type="Texture2D" uid="uid://dysag8gjs27sj" path="res://assets/ingredientes/ingredient_5.png" id="6_4jeit"]
+[ext_resource type="Texture2D" uid="uid://cbkprio4gxsfv" path="res://assets/ingredientes/ingredient_6.png" id="7_wvj45"]
+[ext_resource type="Texture2D" uid="uid://c442b6b725vbt" path="res://assets/ingredientes/ingredient_3.png" id="8_80uvq"]
+[ext_resource type="Texture2D" uid="uid://dlruk5hemq77x" path="res://assets/ingredientes/ingredient_2.png" id="9_kcp78"]
+[ext_resource type="Texture2D" uid="uid://cgg52ntp03jy5" path="res://assets/ingredientes/milk.png" id="10_vwnhl"]
+[ext_resource type="FontFile" uid="uid://b6eqemge56kf8" path="res://fonts/latin script/quaver/quaver.ttf" id="13_wvj45"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8nb3i"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f3vod"]
+radius = 4.752638
+height = 17.330124
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4jeit"]
+shader = ExtResource("3_i0ytv")
+shader_parameter/strength = 3.0000001425
+
+[sub_resource type="LabelSettings" id="LabelSettings_80uvq"]
+font = ExtResource("13_wvj45")
 
 [node name="CauldronMinigame" type="Node2D" unique_id=1588338729]
 script = ExtResource("1_8nb3i")
 
 [node name="Cauldron" type="Area2D" parent="." unique_id=166895464]
-position = Vector2(270, 225)
-scale = Vector2(12, 12)
+position = Vector2(269, 230)
+scale = Vector2(17.51, 17.51)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cauldron" unique_id=609265809]
+position = Vector2(0.083333336, 0.4166667)
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("2_f3vod")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron" unique_id=611438365]
-shape = SubResource("CircleShape2D_8nb3i")
+position = Vector2(0.08333332, -5.25)
+rotation = -1.58269
+shape = SubResource("CapsuleShape2D_f3vod")
 
-[node name="Ingredients" type="Node2D" parent="." unique_id=1396310621]
-script = ExtResource("1_o7ff5")
+[node name="Boxes" type="Node2D" parent="." unique_id=48014472]
 
-[node name="Bone" parent="Ingredients" unique_id=846266590 instance=ExtResource("3_a8o8l")]
-position = Vector2(84, 67)
-ingredient_name = "Bone"
-ingredient_texture = ExtResource("3_ubya0")
+[node name="IngredientBox" type="Sprite2D" parent="Boxes" unique_id=524678740]
+position = Vector2(93, 341)
+scale = Vector2(9, 9)
+texture = ExtResource("3_c5a2w")
 
-[node name="BatEar" parent="Ingredients" unique_id=2120590168 instance=ExtResource("3_a8o8l")]
-position = Vector2(463, 64)
-ingredient_name = "BatEar"
-ingredient_texture = ExtResource("4_s3l6n")
+[node name="IngredientBox2" type="Sprite2D" parent="Boxes" unique_id=810262286]
+position = Vector2(154, 417)
+scale = Vector2(9, 9)
+texture = ExtResource("3_c5a2w")
 
-[node name="LeafLitter" parent="Ingredients" unique_id=204616585 instance=ExtResource("3_a8o8l")]
-position = Vector2(48, 449)
-ingredient_name = "LeafLitter"
-ingredient_texture = ExtResource("6_s3l6n")
+[node name="IngredientBox3" type="Sprite2D" parent="Boxes" unique_id=75300647]
+position = Vector2(376, 367)
+scale = Vector2(9, 9)
+texture = ExtResource("3_c5a2w")
 
-[node name="MonkeyMilk" parent="Ingredients" unique_id=880262810 instance=ExtResource("3_a8o8l")]
-position = Vector2(452, 425)
-ingredient_name = "MonkeyMilk"
-ingredient_texture = ExtResource("5_biae1")
+[node name="IngredientBox4" type="Sprite2D" parent="Boxes" unique_id=440199063]
+position = Vector2(283, 416)
+scale = Vector2(9, 9)
+texture = ExtResource("3_c5a2w")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1606929615]
 visible = false
@@ -53,3 +74,75 @@ offset_bottom = 23.0
 [node name="IngredientsCounter" type="Label" parent="UI" unique_id=1089164344]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Ingredients" type="Node2D" parent="." unique_id=1396310621]
+script = ExtResource("1_o7ff5")
+
+[node name="Bone" parent="Ingredients" unique_id=846266590 instance=ExtResource("3_a8o8l")]
+unique_name_in_owner = true
+position = Vector2(92, 313)
+ingredient_name = "Bone"
+
+[node name="Sprite2D" parent="Ingredients/Bone" index="0" unique_id=394122156]
+texture = ExtResource("6_4jeit")
+
+[node name="BatEar" parent="Ingredients" unique_id=2120590168 instance=ExtResource("3_a8o8l")]
+unique_name_in_owner = true
+position = Vector2(154, 390)
+ingredient_name = "BatEar"
+ingredient_texture = ExtResource("7_wvj45")
+
+[node name="LeafLitter" parent="Ingredients" unique_id=204616585 instance=ExtResource("3_a8o8l")]
+unique_name_in_owner = true
+position = Vector2(283, 386)
+ingredient_name = "LeafLitter"
+ingredient_texture = ExtResource("8_80uvq")
+
+[node name="Ingredient5" parent="Ingredients" unique_id=168808180 instance=ExtResource("3_a8o8l")]
+unique_name_in_owner = true
+position = Vector2(377, 340)
+ingredient_name = "Ingredient5"
+ingredient_texture = ExtResource("9_kcp78")
+
+[node name="MonkeyMilk" parent="Ingredients" unique_id=880262810 instance=ExtResource("3_a8o8l")]
+unique_name_in_owner = true
+position = Vector2(478, 228)
+scale = Vector2(1, 2.4)
+ingredient_name = "MonkeyMilk"
+ingredient_texture = ExtResource("10_vwnhl")
+
+[node name="Sprite2D" parent="Ingredients/MonkeyMilk" index="0" unique_id=394122156]
+position = Vector2(5, 3)
+scale = Vector2(10, 5)
+
+[node name="CollisionShape2D" parent="Ingredients/MonkeyMilk/Area2D" parent_id_path=PackedInt32Array(880262810, 492779045) index="0" unique_id=343716787]
+position = Vector2(0, 3.4999962)
+
+[node name="OverlayContainer" type="Control" parent="." unique_id=1414564145]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CraftingMinigame" parent="." unique_id=1602030257 instance=ExtResource("3_sm5v0")]
+visible = false
+position = Vector2(1, 3)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2009021062]
+visible = false
+material = SubResource("ShaderMaterial_4jeit")
+offset_right = 540.0
+offset_bottom = 499.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="." unique_id=292715977]
+offset_left = 28.0
+offset_top = 28.0
+offset_right = 202.0
+offset_bottom = 52.0
+text = "More coming soon..."
+label_settings = SubResource("LabelSettings_80uvq")
+
+[editable path="Ingredients/Bone"]
+[editable path="Ingredients/MonkeyMilk"]

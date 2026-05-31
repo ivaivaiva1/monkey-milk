@@ -4,19 +4,24 @@
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_j1wlq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f3vod"]
-radius = 26.683329
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1wlq"]
+size = Vector2(20, 22.5)
 
 [node name="Ingredient" type="Node2D" unique_id=168808180]
 script = ExtResource("1_b1g8x")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=394122156]
 unique_name_in_owner = true
+position = Vector2(5, 27)
+scale = Vector2(8, 11)
 texture = SubResource("Texture2DRD_j1wlq")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=492779045]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=343716787]
-shape = SubResource("CircleShape2D_f3vod")
+unique_name_in_owner = true
+scale = Vector2(5.5, 2.8)
+shape = SubResource("RectangleShape2D_j1wlq")
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

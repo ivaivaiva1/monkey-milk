@@ -11,8 +11,9 @@ var mouse_offset := Vector2.ZERO
 func _ready() -> void:
 	if sprite == null:
 		sprite = find_child("Sprite2D", true, false) as Sprite2D
-
+	
 	if sprite != null:
+		if ingredient_texture == null: return
 		sprite.texture = ingredient_texture
 
 func _process(delta):
@@ -30,7 +31,8 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 		else:
 			selected = false
 
-func _on_area_entered(area: Area2D):
-	if area.name == "Cauldron":
-		get_tree().current_scene.open_crafting()
-		queue_free()
+
+#func _on_area_2d_area_entered(area: Area2D) -> void:
+	#if area.name == "Cauldron":
+		#get_tree().change_scene_to_file("res://scenes/minigame crafting/crafting_minigame.tscn")
+		#queue_free()

@@ -11,4 +11,9 @@ func start():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 
 func _on_timeline_ended():
+	print("time line acabo")
+	Dialogic.end_timeline()
+
+	await get_tree().process_frame
+
 	get_tree().change_scene_to_file(next_scene)

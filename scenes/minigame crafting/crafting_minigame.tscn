@@ -12,49 +12,65 @@ font_size = 22
 script = ExtResource("1_tnoep")
 
 [node name="Background" type="ColorRect" parent="." unique_id=2078223658]
+z_index = 1000
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Bar" type="ColorRect" parent="." unique_id=454818029]
+z_index = 1000
 offset_left = 70.0
 offset_top = 220.0
 offset_right = 470.0
 offset_bottom = 240.0
 color = Color(0.16924527, 0.1692453, 0.16924527, 0.89411765)
+metadata/_edit_use_anchors_ = true
 
 [node name="SuccessZone" type="ColorRect" parent="Bar" unique_id=1381469048]
+unique_name_in_owner = true
+z_index = 1000
 layout_mode = 0
 offset_left = 180.0
 offset_right = 240.0
 offset_bottom = 20.0
 color = Color(0.6675, 1, 0.43, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Marker" type="ColorRect" parent="Bar" unique_id=1902859589]
+unique_name_in_owner = true
+z_index = 1000
 layout_mode = 0
 offset_top = -20.0
 offset_right = 10.0
 offset_bottom = 40.0
 color = Color(0.99, 0.10890002, 0.3438598, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="InstructuonLabel" type="Label" parent="." unique_id=413783955]
+z_index = 1000
 offset_left = 45.0
 offset_top = 50.0
 offset_right = 501.0
 offset_bottom = 68.0
 text = " Press SPACE when the marker is inside the green zone! "
 label_settings = SubResource("LabelSettings_3q4jd")
+metadata/_edit_use_anchors_ = true
 
 [node name="ProgressLabel" type="Label" parent="." unique_id=646872916]
+z_index = 1000
 offset_left = 15.0
 offset_top = 10.0
 offset_right = 91.0
 offset_bottom = 33.0
+metadata/_edit_use_anchors_ = true
 
 [node name="ResultLabel" type="Label" parent="." unique_id=1324919450]
+z_index = 1000
 offset_left = 235.0
 offset_top = 305.0
 offset_right = 336.0
 offset_bottom = 328.0
+metadata/_edit_use_anchors_ = true
