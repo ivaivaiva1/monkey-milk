@@ -3,10 +3,8 @@ class_name SOUNDS_LIST
 
 
 ## musics 
-#const LEVEL01_MUSIC := {"stream": preload("res://Audio/Dredge/level01_music.mp3"), "volume": -2.0}
-#const LEVEL01_BOSS_MUSIC := {"stream": preload("res://Audio/Dredge/level01_boss_music.mp3"), "volume": 2.0}
-#
-#
+const MONKEYMINIGAME_MUSIC := {"stream": preload("res://audio/music/monkey_minigame_music.mp3"), "volume": -12.0}
+
 
 # effects 
 const GET_MILK := {"stream": preload("uid://d36r0rywv4gp1"), "volume": -4.0}

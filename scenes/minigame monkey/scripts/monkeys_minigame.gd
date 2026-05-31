@@ -19,6 +19,8 @@ var milk: int = 0
 
 
 func _ready() -> void:
+	Engine.time_scale = 1
+	MusicManager.play_instant(SOUNDS_LIST.MONKEYMINIGAME_MUSIC)
 	tutorial.monkey_minigame = self
 	
 	monkey_spawner.monkey_minigame = self

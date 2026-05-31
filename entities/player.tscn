@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dywebltem1mub"]
 
 [ext_resource type="Script" uid="uid://b0ugsba2bd74v" path="res://scripts/player.gd" id="1_e4p34"]
+[ext_resource type="Shader" uid="uid://dj0tbnaqo3wlb" path="res://shaders/blink_shader.gdshader" id="2_ef06p"]
 [ext_resource type="Texture2D" uid="uid://b2hypfpiekthc" path="res://assets/Sprite Pack 3/4 - Tommy/Idle_Poses (32 x 32).png" id="2_qly61"]
 [ext_resource type="Texture2D" uid="uid://cc7fcat6t8fhl" path="res://assets/chars/playergirl1_idle.png" id="2_rfe5m"]
 [ext_resource type="Texture2D" uid="uid://dlfkijmq7y6nn" path="res://assets/chars/playergirl1_walk.png" id="3_qly61"]
@@ -12,6 +13,11 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rfe5m"]
 radius = 5.0
 height = 21.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tjdhl"]
+shader = ExtResource("2_ef06p")
+shader_parameter/flash_color = Color(1, 0.078431375, 0, 1)
+shader_parameter/flash_pct = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ef06p"]
 atlas = ExtResource("2_qly61")
@@ -241,6 +247,7 @@ shape = SubResource("CapsuleShape2D_rfe5m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=692799283]
 z_index = 100
+material = SubResource("ShaderMaterial_tjdhl")
 sprite_frames = SubResource("SpriteFrames_rfe5m")
 animation = &"idle_girl"
 autoplay = "idle_girl"

@@ -19,6 +19,7 @@ position = Vector2(-1, -1)
 script = ExtResource("2_1avb3")
 
 [node name="Sprite" type="Sprite2D" parent="Banana" unique_id=1881846095]
+z_index = 500
 material = SubResource("ShaderMaterial_dj4h4")
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("3_dj4h4")
@@ -34,6 +35,7 @@ position = Vector2(-1, 1)
 script = ExtResource("2_1avb3")
 
 [node name="Sprite" type="Sprite2D" parent="Banana3" unique_id=1398737430]
+z_index = 500
 material = SubResource("ShaderMaterial_dj4h4")
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("3_dj4h4")
@@ -49,6 +51,7 @@ position = Vector2(1, 1)
 script = ExtResource("2_1avb3")
 
 [node name="Sprite" type="Sprite2D" parent="Banana4" unique_id=1106800943]
+z_index = 500
 material = SubResource("ShaderMaterial_dj4h4")
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("3_dj4h4")
@@ -64,6 +67,7 @@ position = Vector2(1, -1)
 script = ExtResource("2_1avb3")
 
 [node name="Sprite" type="Sprite2D" parent="Banana2" unique_id=732368374]
+z_index = 500
 material = SubResource("ShaderMaterial_dj4h4")
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("3_dj4h4")

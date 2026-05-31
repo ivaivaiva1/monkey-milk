@@ -13,7 +13,15 @@ var max_life: int = 3
 var current_life: int = 3 
 var hited_bananas: Array[int] = []
 
+
+func _ready() -> void:
+	anim.material = anim.material.duplicate()
+
+
+
 func _process(delta: float) -> void:
+	if frame_freeze_cooldown > 0:
+		frame_freeze_cooldown -= delta
 	player_warp()
 
 
@@ -101,6 +109,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 
 func get_hited():
+	frameFreeze()
+	flash_red()
 	current_life -= 1
 	if current_life <= 0:
 		monkey_minigame.game_over()
@@ -111,3 +121,39 @@ func get_hited():
 func update_hearts():
 	for i in range(hearts.size()):
 		hearts[i].visible = i < current_life
+
+
+var flash_red_tween: Tween
+func flash_red():
+	if flash_red_tween:
+		flash_red_tween.kill()
+	
+	anim.material.set_shader_parameter("flash_pct", 0.0)
+	
+	flash_red_tween = create_tween()
+	flash_red_tween.set_trans(Tween.TRANS_BACK)
+	flash_red_tween.set_ease(Tween.EASE_OUT)
+	
+	flash_red_tween.tween_property(
+		anim.material,
+		"shader_parameter/flash_pct",
+		0.55,
+		0.03
+	)
+	
+	flash_red_tween.tween_property(
+		anim.material,
+		"shader_parameter/flash_pct",
+		0.0,
+		0.3
+	)
+
+
+var frame_freeze_cooldown: float = 0
+var frame_freeze_time: float = 0.5
+func frameFreeze():
+	if frame_freeze_cooldown > 0: return
+	Engine.time_scale = 0.1
+	await get_tree().create_timer(frame_freeze_time * 0.1).timeout 
+	Engine.time_scale = 1
+	frame_freeze_cooldown = frame_freeze_time
