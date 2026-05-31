@@ -17,8 +17,8 @@ func _ready() -> void:
 			Globals.last_dialogue = Globals.LastDialogue.GOT_MILK
 			got_milk.start()
 			pass
-		Globals.LastDialogue.CAULDRON:
-			#Globals.last_dialogue = Globals.LastDialogue.
+		Globals.LastDialogue.GOT_MILK:
+			Globals.last_dialogue = Globals.LastDialogue.CAULDRON
 			# chama default dialogue 5
 			pass
 		Globals.LastDialogue.FINAL:

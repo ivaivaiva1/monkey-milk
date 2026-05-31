@@ -2,6 +2,7 @@ extends Node2D
 class_name BananaSpawner
 
 var monkey_minigame: MonkeyMinigame
+var is_started: bool = false
 
 var banana_cooldown: float = 2.5
 var banana_timer: float = 2.5
@@ -11,11 +12,12 @@ var yellow_bomb: PackedScene = preload("res://scenes/minigame monkey/banana_bomb
 
 
 func start() -> void:
+	is_started = true
 	banana_timer = monkey_minigame.currently_bananas_cooldown
 
 
 func _process(delta: float) -> void:
-	print(banana_timer)
+	if !is_started: return
 	if banana_timer > 0: 
 		banana_timer -= delta
 	else:

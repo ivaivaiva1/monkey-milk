@@ -26,23 +26,25 @@ func _ready() -> void:
 	tutorial.monkey_minigame = self
 	
 	monkey_spawner.monkey_minigame = self
-	monkey_spawner.start()
+	#monkey_spawner.start()
 	
 	banana_spawner.monkey_minigame = self
-	banana_spawner.start()
+	#banana_spawner.start()
 	
 	player.monkey_minigame = self
 	player.change_anim()
 	
-	get_tree().paused = true
+	#get_tree().paused = true
 
 
 func start_game():
 	if Dialogic.VAR.get_variable("player_gender") != "":
 		Globals.player_gender = Dialogic.VAR.get_variable("player_gender")
-	player.global_position = Vector2(270, 230)
+	#player.global_position = Vector2(270, 230)
 	blur_screen(false)
 	milk_counter.visible = true
+	banana_spawner.start()
+	monkey_spawner.start()
 
 
 func _process(delta: float) -> void:

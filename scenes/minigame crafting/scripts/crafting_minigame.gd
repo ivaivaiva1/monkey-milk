@@ -1,5 +1,7 @@
 extends Node2D
 
+var caulderon_scene
+
 @onready var marker: ColorRect = $Marker
 @onready var success_zone: ColorRect = $SuccessZone
 @onready var result_label: Label = $ResultLabel
@@ -12,7 +14,7 @@ var speed = 300
 var direction = 1
 
 var successes = 0
-const REQUIRED_SUCCESSES = 10
+const REQUIRED_SUCCESSES = 5
 
 func _ready():
 	randomize()
@@ -37,15 +39,8 @@ func _process(delta):
 		direction = 1
 
 func update_progress():
-	var text = ""
-	
-	for i in range(REQUIRED_SUCCESSES):
-		if i < successes:
-			text += "[X]"
-		else:
-			text += "[  ]"
-	
-	progress_label.text = text
+	progress_label.text = str(successes) + "/" + str(REQUIRED_SUCCESSES)
+
 
 func randomize_zone():
 	var min_x = bar.position.x
@@ -56,7 +51,6 @@ func randomize_zone():
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		check_result()
-
 
 func check_result():
 	var marker_x = marker.global_position.x
@@ -75,17 +69,32 @@ func check_result():
 		randomize_zone()
 		ritual_failed()
 
+func crafting_complete():
+	get_tree().current_scene._on_crafting_finished()
+	queue_free()
+
+signal crafting_finished
 
 func ritual_complete():
-	result_label.text = "RITUAL COMPLETE!"
+	result_label.text = "SUCCESS!"
 	
 	await get_tree().create_timer(1.5).timeout
 	
-	get_tree().change_scene_to_file(
-		"res://scenes/ZombieDialogue.tscn"
-	)
+	caulderon_scene._on_crafting_finished()
+	
+	queue_free()
 
 
 func ritual_failed():
-	#	get_tree().change_scene_to_file("")
-	print("fail")
+	successes -= 1
+	
+	if successes < 0:
+		successes = 0
+	
+	update_progress()
+	
+	result_label.text = "Missed!"
+	
+	await get_tree().create_timer(0.5).timeout
+	
+	result_label.text = ""

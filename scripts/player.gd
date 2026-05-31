@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var monkey_minigame: MonkeyMinigame
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+var is_started: bool = false
 
 const SPEED = 2.8
 const ACCELERATION = 3.7
@@ -17,6 +18,9 @@ var hited_bananas: Array[int] = []
 func _ready() -> void:
 	anim.material = anim.material.duplicate()
 
+
+func start():
+	is_started = true
 
 
 func _process(delta: float) -> void:

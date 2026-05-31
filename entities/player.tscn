@@ -249,8 +249,8 @@ shape = SubResource("CapsuleShape2D_rfe5m")
 z_index = 100
 material = SubResource("ShaderMaterial_tjdhl")
 sprite_frames = SubResource("SpriteFrames_rfe5m")
-animation = &"idle_girl"
-autoplay = "idle_girl"
+animation = &"idle_nonbinary"
+autoplay = "idle_nonbinary"
 
 [node name="PixelHeart1" type="Sprite2D" parent="." unique_id=1084952609]
 position = Vector2(-9.021999, 20.5)

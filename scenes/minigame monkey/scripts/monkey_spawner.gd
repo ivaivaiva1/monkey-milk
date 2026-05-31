@@ -2,6 +2,7 @@ extends Node2D
 class_name Monkey_Spawner
 
 var monkey_minigame: MonkeyMinigame
+var is_started: bool = false
 
 var monkey_scene: PackedScene = preload("res://scenes/minigame monkey/monkey.tscn")
 var monkeys: Array[Monkey] = []
@@ -10,10 +11,12 @@ var monkey_timer: float
 
 
 func start() -> void:
+	is_started = true
 	monkey_timer = monkey_cooldown
 
 
 func _process(delta: float) -> void:
+	if !is_started: return
 	if monkey_timer > 0:
 		monkey_timer -= delta
 	else:
