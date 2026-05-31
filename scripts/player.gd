@@ -104,7 +104,7 @@ func get_hited():
 	current_life -= 1
 	if current_life <= 0:
 		monkey_minigame.game_over()
-		pass
+		queue_free()
 	update_hearts()
 
 

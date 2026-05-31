@@ -4,6 +4,7 @@ class_name Monkey
 var monkey_spawner: Monkey_Spawner
 @onready var sprite: AnimatedSprite2D = %sprite
 var is_collected: bool = false
+var is_dead: bool = false
 
 func _ready() -> void:
 	sprite.material = sprite.material.duplicate()
@@ -20,6 +21,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player"):
 		if monkey_spawner == null:
 			monkey_spawner = get_parent()
+		SfxPlayer.play_sfx(SOUNDS_LIST.PICKMONKEY_SFX)
 		is_collected = true
 		do_blink_monkey_monkey()
 
@@ -47,6 +49,9 @@ func do_blink_monkey_monkey():
 
 
 func die():
+	if is_dead: return
+	is_dead = true
 	monkey_spawner.collect_monkey(self)
 	monkey_spawner.monkey_minigame.get_milk()
+	SfxPlayer.play_sfx(SOUNDS_LIST.GET_MILK)
 	queue_free()

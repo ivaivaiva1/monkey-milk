@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 func move_bananas(delta: float):
 	if bananas.global_position.y > banana_shadow.global_position.y - 12: 
 		banana_shadow.scale = Vector2.ONE
+		SfxPlayer.play_sfx(SOUNDS_LIST.BANANAEXPLOSION_SFX)
 		spawn_explosion()
 		queue_free()
 	

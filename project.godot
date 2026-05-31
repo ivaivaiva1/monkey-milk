@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 ScreenShake="*uid://bymguscev3fvk"
 Dialogic="*uid://ds2q0uclmolvu"
 Globals="*uid://ch5o8pewnkrd5"
+SoundsDictionary="*uid://bhsqp5gdlia78"
+SfxPlayer="*uid://uyhbi2gkt7u8"
 
 [dialogic]
 

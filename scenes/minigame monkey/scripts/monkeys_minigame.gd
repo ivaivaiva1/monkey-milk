@@ -53,15 +53,12 @@ func get_milk():
 	milk += 1
 	milk_counter.text = "Milk: " + str(milk)
 
-func victory():
-	get_tree().change_scene_to_file(
-		"res://scenes/minigame crafting/crafting_minigame.tscn"
-	)
 
 @onready var game_over_panel = $UI/GameOverPanel
 @onready var done_button: Button = %DoneButton
 @onready var not_enough: RichTextLabel = %"not enough"
 func game_over():
+	SfxPlayer.play_sfx(SOUNDS_LIST.GAMEOVER_SFX)
 	Globals.milk += milk
 	blur_screen(true)
 	milk_counter.visible = false
@@ -74,7 +71,7 @@ func game_over():
 	else:
 		done_button.visible = false
 		not_enough.visible = true
-	get_tree().paused = true
+	#get_tree().paused = true
 
 func _on_try_again_button_button_down() -> void:
 	get_tree().reload_current_scene()
