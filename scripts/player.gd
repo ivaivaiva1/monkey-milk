@@ -109,6 +109,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 
 func get_hited():
+	SfxPlayer.play_sfx(SOUNDS_LIST.GAMEOVER_SFX)
+	SfxPlayer.play_sfx(SOUNDS_LIST.DAMAGEMALE_SFX)
 	frameFreeze()
 	flash_red()
 	current_life -= 1

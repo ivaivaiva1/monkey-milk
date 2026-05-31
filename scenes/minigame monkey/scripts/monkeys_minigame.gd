@@ -21,7 +21,7 @@ var milk: int = 0
 func _ready() -> void:
 	Engine.time_scale = 1
 	if MusicManager.current_playing_music != SOUNDS_LIST.MONKEYMINIGAME_MUSIC["stream"]:
-		MusicManager.play_instant(SOUNDS_LIST.MONKEYMINIGAME_MUSIC)
+		MusicManager.play_with_fade_in(SOUNDS_LIST.MONKEYMINIGAME_MUSIC)
 	
 	tutorial.monkey_minigame = self
 	
@@ -62,6 +62,7 @@ func get_milk():
 @onready var done_button: Button = %DoneButton
 @onready var not_enough: RichTextLabel = %"not enough"
 func game_over():
+	Engine.time_scale = 0.5
 	SfxPlayer.play_sfx(SOUNDS_LIST.GAMEOVER_SFX)
 	Globals.milk += milk
 	blur_screen(true)
@@ -82,6 +83,7 @@ func _on_try_again_button_button_down() -> void:
 
 func _on_done_button_button_down() -> void:
 	Engine.time_scale = 1
+	MusicManager.fade_out()
 	get_tree().change_scene_to_file("res://dialogues/dialogue_scene.tscn")
 
 
