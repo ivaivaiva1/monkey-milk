@@ -3,6 +3,7 @@ extends Node
 @export var base_bus := "Music"
 
 var current_player: AudioStreamPlayer = null
+var current_playing_music 
 
 # toca musica instantaneamente - delay opcional
 func play_instant(music_data: Dictionary, delay: float = 0.0) -> void:
@@ -18,6 +19,7 @@ func play_instant(music_data: Dictionary, delay: float = 0.0) -> void:
 	player.play()
 	
 	current_player = player
+	current_playing_music = music_data["stream"]
 
 
 # toca musica com fade-in - delay opcional
@@ -41,6 +43,7 @@ func play_with_fade_in(music_data: Dictionary, fade_time: float = 1.5, delay: fl
 	
 	
 	current_player = player
+	current_playing_music = music_data["stream"]
 	await tween.finished
 
 
@@ -55,6 +58,8 @@ func fade_out(duration: float = 1.5) -> void:
 	
 	if current_player == player:
 		current_player = null
+	if current_playing_music:
+		current_playing_music = ""
 	player.stop()
 	player.queue_free()
 

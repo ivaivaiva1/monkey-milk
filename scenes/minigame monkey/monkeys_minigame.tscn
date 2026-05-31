@@ -310,6 +310,14 @@ material = SubResource("ShaderMaterial_ha0nu")
 offset_right = 540.0
 offset_bottom = 500.0
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2133043034]
+z_index = -4096
+offset_left = -76.0
+offset_top = -40.0
+offset_right = 610.0
+offset_bottom = 544.0
+color = Color(0.4509804, 0.5176471, 0.28235295, 1)
+
 [connection signal="button_down" from="UI/GameOverPanel/TryAgainButton" to="." method="_on_try_again_button_button_down"]
 [connection signal="button_down" from="UI/GameOverPanel/DoneButton" to="." method="_on_done_button_button_down"]
 [connection signal="button_down" from="TutorialPopUp/Panel/StartButton" to="TutorialPopUp" method="_on_start_button_button_down"]

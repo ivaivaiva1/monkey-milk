@@ -20,7 +20,9 @@ var milk: int = 0
 
 func _ready() -> void:
 	Engine.time_scale = 1
-	MusicManager.play_instant(SOUNDS_LIST.MONKEYMINIGAME_MUSIC)
+	if MusicManager.current_playing_music != SOUNDS_LIST.MONKEYMINIGAME_MUSIC["stream"]:
+		MusicManager.play_instant(SOUNDS_LIST.MONKEYMINIGAME_MUSIC)
+	
 	tutorial.monkey_minigame = self
 	
 	monkey_spawner.monkey_minigame = self
@@ -79,6 +81,7 @@ func _on_try_again_button_button_down() -> void:
 	get_tree().reload_current_scene()
 
 func _on_done_button_button_down() -> void:
+	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://dialogues/dialogue_scene.tscn")
 
 
